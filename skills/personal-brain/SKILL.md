@@ -3,7 +3,7 @@ name: personal-brain
 description: Setup e onboarding del vault Personal Brain. Crea la Wiki, genera AGENTS.md, costruisce la vault-map iniziale. Usa quando l'utente vuole configurare il vault da zero, eseguire il setup iniziale, o rigenerare AGENTS.md. Trigger: "setup", "inizia", "configura il vault", "/personal-brain".
 license: MIT
 metadata:
-  author: USERNAME
+  author: manuel-magnani2
   version: "1.0"
 ---
 
