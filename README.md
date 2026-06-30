@@ -26,6 +26,23 @@ Installa quattro skill nel tuo agente AI:
 | `/personal-brain-query` | Interroga la wiki su un tema o domanda |
 | `/personal-brain-lint` | Verifica salute e coerenza della wiki |
 
+## Aggiornamento
+
+Quando questo repo viene aggiornato (nuove skill, fix, modifiche ai reference), aggiorna le skill già installate invece di reinstallarle da zero:
+
+\`\`\`bash
+# Aggiorna tutte le skill installate (chiede conferma su scope globale/progetto)
+npx skills update
+
+# Aggiorna solo le skill di questo pacchetto
+npx skills update personal-brain personal-brain-ingest personal-brain-query personal-brain-lint
+
+# Non interattivo
+npx skills update -y
+\`\`\`
+
+L'installazione di default usa symlink da una copia canonica verso ogni agente configurato: un singolo `update` propaga la modifica a tutti gli agenti (OpenCode, Pi, Claude Code, ecc.) senza bisogno di toccarli uno per uno.
+
 ## Come funziona
 
 ```

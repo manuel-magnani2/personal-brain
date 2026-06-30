@@ -66,6 +66,21 @@ Specifica completa del formato Wiki: `.agents/skills/personal-brain/references/w
 
 ---
 
+## Versionamento
+
+Il vault è sotto controllo Git (archivio separato — vedi Note tecniche).
+
+Al termine di ogni sessione che scrive nella Wiki (setup, ingest, lint con fix applicati), esegui un commit automaticamente, senza chiedere conferma. Il commit Git è un'operazione locale e reversibile, distinta dalle modifiche di contenuto — quelle restano soggette alle regole di conferma di ciascuna skill.
+
+Messaggio di commit: sintetico, in italiano, descrive cosa è stato fatto. Esempi:
+- `ingest: [titolo fonte]`
+- `lint: fix vault-map e index`
+- `setup: inizializzazione vault`
+
+Se il commit fallisce (conflitti, repository non inizializzato, working tree sporco per altri motivi), segnalalo all'utente — non tentare fix automatici sulla configurazione Git.
+
+---
+
 ## Skill disponibili
 
 | Comando | Quando usarla |
