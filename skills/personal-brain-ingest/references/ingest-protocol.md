@@ -24,6 +24,8 @@ autore: "Nome Autore"
 formato: libro | video | articolo | podcast | conversazione | corso
 data-ingest: YYYY-MM-DD
 area: mindset | career | body | trasversale
+sorgente-path: "percorso/relativo/al/file/grezzo.md"
+sorgente-modificato: "YYYY-MM-DDTHH:MM"
 tags: []
 ---
 
@@ -47,6 +49,15 @@ tags: []
 
 [La domanda con cui si chiude questa fonte — da riprendere in sessioni future.]
 ```
+
+### I campi `sorgente-path` e `sorgente-modificato`
+
+Questi due campi esistono per un solo scopo: permettere ad `AGENTS.md` di rilevare in automatico, ad ogni avvio di sessione, se una fonte grezza è stata modificata dopo l'ultimo ingest o se esistono file nelle cartelle LEGGI mai processati. Non servono ad altro e non vanno usati per altre logiche.
+
+- `sorgente-path`: percorso relativo alla root del vault del file grezzo da cui questa pagina è nata (es. `Mindset/atomic-habits-note.md`)
+- `sorgente-modificato`: data e ora di ultima modifica del file grezzo, letta dal filesystem al momento dell'ingest — non inserita a mano
+
+Compilali sempre, per ogni fonte. Se la fonte non proviene da un singolo file (es. testo incollato in chat, dialogo diretto senza file di origine), lascia entrambi i campi vuoti (`""`) — il rilevamento automatico li ignorerà semplicemente.
 
 ---
 
@@ -119,7 +130,7 @@ Esempi di quando ha senso:
 tipo: sintesi
 titolo: "Tema della sintesi"
 concetti-collegati: ["[[concetto-1]]", "[[concetto-2]]"]
-fonti-collegate: ["[[fonte-1]]", "[[fonte-2]]"]
+fonti-collegate: ["[[fonte-1]]"]
 data-creazione: YYYY-MM-DD
 data-aggiornamento: YYYY-MM-DD
 tags: []

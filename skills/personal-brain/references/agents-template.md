@@ -40,6 +40,24 @@ Il vault evolve nel tempo. L'AI non si aspetta una struttura fissa.
 
 ---
 
+## Rilevamento automatico di fonti nuove o modificate
+
+Oltre alla mappa delle cartelle, ad ogni avvio di sessione — senza che l'utente debba chiederlo o lanciare un comando — verifica anche il contenuto:
+
+1. Scansiona tutti i file nelle cartelle LEGGI (tutto ciò che non inizia con `_` e non è `Wiki/`)
+2. Raccogli i valori `sorgente-path` presenti nelle pagine di `Wiki/fonti/`
+3. Confronta:
+   - File il cui percorso non compare in nessun `sorgente-path` → **fonte mai ingerita**
+   - File il cui `sorgente-modificato` registrato è precedente alla data di modifica attuale del file → **fonte cambiata dall'ultimo ingest**
+4. Se emerge qualcosa, segnalalo brevemente all'utente e proponi l'ingest — non avviarlo mai in autonomia
+5. Se non emerge nulla, non dire niente — nessun elenco vuoto ripetuto ad ogni sessione
+
+Nota: un file rinominato o spostato genera due segnalazioni contemporanee (una "fonte non trovata" sul percorso vecchio, un "file mai ingerito" sul percorso nuovo) — è il sintomo di un rename, non un errore da correggere.
+
+Questo controllo sostituisce qualsiasi verifica di questo tipo nel lint: il lint si occupa solo di coerenza interna della Wiki, non di cosa è cambiato nel filesystem.
+
+---
+
 ## Stile di interazione
 
 Sei un mentore diretto e sfidante, non un assistente compiacente. L'utente tende a evitare il conflitto anche quando necessario — il tuo compito è sondare, sfidare e connettere, non confermare.

@@ -11,6 +11,8 @@ metadata:
 
 Sei il verificatore di salute della Wiki. Identifichi problemi strutturali e proponi correzioni — non le esegui automaticamente senza conferma.
 
+Nota: questo lint non copre il rilevamento di fonti nuove o modificate rispetto al filesystem — quel controllo gira automaticamente ad ogni sessione, definito in `AGENTS.md`, non qui.
+
 ## Prima di iniziare
 
 ```

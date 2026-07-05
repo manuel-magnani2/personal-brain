@@ -36,6 +36,8 @@ Il vault evolve nel tempo. L'AI non porta con sé una mappa precotta — la cost
 2. Verifica se ci sono cartelle nuove non presenti nella mappa
 3. Se trovi qualcosa di nuovo: aggiorna `vault-map.md` e segnalalo all'utente ("Ho trovato una nuova cartella: [nome]. La tratto come fonte grezza e aggiungo alla mappa.")
 
+Il rilevamento di file nuovi o modificati dentro le cartelle già mappate (non di cartelle nuove) è un controllo separato, automatico ad ogni sessione, definito in `AGENTS.md` — si basa sui campi `sorgente-path` e `sorgente-modificato` delle pagine in `Wiki/fonti/` (vedi sotto).
+
 ### Formato di vault-map.md
 
 ```markdown
@@ -118,9 +120,13 @@ autore: "Nome Autore"
 formato: libro | video | articolo | podcast | conversazione | corso
 data-ingest: YYYY-MM-DD
 area: [nome della cartella sorgente, es. mindset | career | body]
+sorgente-path: "percorso/relativo/al/file/grezzo.md"
+sorgente-modificato: "YYYY-MM-DDTHH:MM"
 tags: []
 ---
 ```
+
+`sorgente-path` e `sorgente-modificato` alimentano il rilevamento automatico di fonti nuove o modificate (vedi `AGENTS.md` e `references/ingest-protocol.md` della skill ingest). Lasciali vuoti solo se la fonte non proviene da un file (es. dialogo diretto in chat).
 
 **`Wiki/concetti/`** — Modelli mentali, framework, principi adottati.
 Nome file: `nome-concetto.md`

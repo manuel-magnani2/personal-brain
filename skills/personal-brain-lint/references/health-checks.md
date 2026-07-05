@@ -80,9 +80,11 @@ Campi obbligatori per tipo:
 
 | Tipo | Campi obbligatori |
 |---|---|
-| `fonte` | `tipo`, `titolo`, `autore`, `formato`, `data-ingest`, `area` |
+| `fonte` | `tipo`, `titolo`, `autore`, `formato`, `data-ingest`, `area`, `sorgente-path`, `sorgente-modificato` |
 | `concetto` | `tipo`, `titolo`, `area`, `data-creazione`, `data-aggiornamento`, `maturità` |
 | `sintesi` | `tipo`, `titolo`, `data-creazione`, `data-aggiornamento` |
+
+`sorgente-path` e `sorgente-modificato` possono essere stringhe vuote (`""`) se la fonte non proviene da un file — non sono "mancanti" in quel caso, sono intenzionalmente vuoti. Segnala come problema solo la reale assenza del campo, non un valore vuoto.
 
 Verifica anche:
 - `tipo` corrisponde alla cartella di appartenenza
@@ -110,6 +112,14 @@ Fix: non automatico. Opzioni per ogni concetto stagnante:
 - Promuovere a `consolidato` se l'esperienza lo giustifica
 - Archiviare in `Wiki/sintesi/` se è diventato parte di un pattern più ampio
 - Lasciare emergente se è ancora irrisolto
+
+---
+
+## Nota — rilevamento fonti nuove o modificate
+
+Questo lint **non** verifica se ci sono file nelle cartelle LEGGI mai ingeriti, o fonti già ingerite il cui file grezzo è stato modificato nel frattempo. Quel controllo non è un check di lint: gira automaticamente ad ogni avvio di sessione, definito in `AGENTS.md` alla root del vault, e si basa sui campi `sorgente-path` e `sorgente-modificato` di `Wiki/fonti/`.
+
+Il lint resta scope-limitato alla coerenza interna della Wiki (link, frontmatter, sincronizzazione index/vault-map). Non duplicare quel controllo qui.
 
 ---
 
