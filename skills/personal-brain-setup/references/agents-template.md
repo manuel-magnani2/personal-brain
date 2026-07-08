@@ -34,7 +34,7 @@ Il vault evolve nel tempo. L'AI non si aspetta una struttura fissa.
 
 **All'avvio di ogni sessione:**
 1. Controlla se esiste `Wiki/vault-map.md`
-2. Se esiste: leggilo per orientarsi, poi verifica se ci sono cartelle nuove non mappate
+2. Se esiste: leggilo per orientarti, poi verifica se ci sono cartelle nuove non mappate
 3. Se non esiste (prima sessione): scansiona il vault, applica le tre regole, crea `Wiki/vault-map.md`
 4. Se trovi cartelle nuove rispetto alla mappa: aggiorna `vault-map.md` e segnala la novità all'utente
 
