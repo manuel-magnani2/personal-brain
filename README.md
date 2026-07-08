@@ -21,7 +21,7 @@ Installa quattro skill nel tuo agente AI:
 
 | Skill | Quando usarla |
 |---|---|
-| `/personal-brain` | Setup iniziale del vault (wizard guidato) |
+| `/personal-brain-setup` | Setup iniziale del vault (wizard guidato) |
 | `/personal-brain-ingest` | Processa una fonte grezza nella wiki |
 | `/personal-brain-query` | Interroga la wiki su un tema o domanda |
 | `/personal-brain-lint` | Verifica salute e coerenza della wiki |
