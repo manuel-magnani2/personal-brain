@@ -3,7 +3,7 @@ name: personal-brain-query
 description: Interroga la Wiki del Personal Brain per rispondere a domande, trovare connessioni, o esplorare un tema. Usa quando l'utente fa una domanda sul proprio percorso di crescita, chiede "cosa ho imparato su X", "cosa dice la wiki di Y", "trova connessioni tra A e B", "cosa mi ha portato a pensare a Z", "/personal-brain-query".
 license: MIT
 metadata:
-  author: USERNAME
+  author: manuel-magnani2
   version: "1.0"
 ---
 

@@ -90,7 +90,7 @@ In ogni sessione di elaborazione:
 - Wikilink `[[nome-pagina]]` per connettere tutto ciò che è collegabile
 - Non creare stub — meglio una pagina densa che molte vuote
 
-Specifica completa del formato Wiki: `.agents/skills/personal-brain/references/wiki-schema.md`
+Specifica completa del formato Wiki: `.agents/skills/personal-brain-setup/references/wiki-schema.md`
 
 ---
 
@@ -113,7 +113,7 @@ Se il commit fallisce (conflitti, repository non inizializzato, working tree spo
 
 | Comando | Quando usarla |
 |---|---|
-| `/personal-brain` | Setup o rigenera la configurazione |
+| `/personal-brain-setup` | Setup o rigenera la configurazione |
 | `/personal-brain-ingest` | Processa una fonte grezza nella wiki |
 | `/personal-brain-query` | Interroga la wiki su un tema o domanda |
 | `/personal-brain-lint` | Verifica salute e coerenza della wiki |

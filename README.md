@@ -30,16 +30,16 @@ Installa quattro skill nel tuo agente AI:
 
 Quando questo repo viene aggiornato (nuove skill, fix, modifiche ai reference), aggiorna le skill già installate invece di reinstallarle da zero:
 
-\`\`\`bash
+```bash
 # Aggiorna tutte le skill installate (chiede conferma su scope globale/progetto)
 npx skills update
 
 # Aggiorna solo le skill di questo pacchetto
-npx skills update personal-brain personal-brain-ingest personal-brain-query personal-brain-lint
+npx skills update personal-brain-setup personal-brain-ingest personal-brain-query personal-brain-lint
 
 # Non interattivo
 npx skills update -y
-\`\`\`
+```
 
 L'installazione di default usa symlink da una copia canonica verso ogni agente configurato: un singolo `update` propaga la modifica a tutti gli agenti (OpenCode, Pi, Claude Code, ecc.) senza bisogno di toccarli uno per uno.
 
@@ -63,7 +63,7 @@ L'AI è il bibliotecario. Tu sei il curatore.
 ## Quick Start
 
 1. **Installa le skill** (vedi sopra)
-2. **Esegui il wizard**: digita `/personal-brain` nel tuo agente — ti guida attraverso il setup del vault
+2. **Esegui il wizard**: digita `/personal-brain-setup` nel tuo agente — ti guida attraverso il setup del vault
 3. **Apri il vault in Obsidian**: File → Open Vault → seleziona la cartella
 4. **Porta una fonte**: copia un file in `Mindset/`, poi esegui `/personal-brain-ingest`
 5. **Sfoglia la wiki**: segui i `[[wikilink]]`, esplora il grafo in Obsidian

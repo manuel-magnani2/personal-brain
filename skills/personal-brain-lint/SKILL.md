@@ -3,7 +3,7 @@ name: personal-brain-lint
 description: Verifica la salute e la coerenza della Wiki del Personal Brain. Controlla sincronizzazione index.md, wikilink rotti, vault-map aggiornata, attività di evoluzione.md, frontmatter delle pagine. Usa quando l'utente vuole fare manutenzione, dice "controlla la wiki", "lint", "salute del sistema", "/personal-brain-lint".
 license: MIT
 metadata:
-  author: USERNAME
+  author: manuel-magnani2
   version: "1.0"
 ---
 

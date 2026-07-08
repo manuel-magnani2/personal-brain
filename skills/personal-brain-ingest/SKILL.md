@@ -3,7 +3,7 @@ name: personal-brain-ingest
 description: Processa una fonte grezza (libro, video, articolo, nota, conversazione) nella Wiki del Personal Brain. Crea pagine strutturate in Wiki/fonti/, aggiorna o crea concetti in Wiki/concetti/, aggiorna index.md e evoluzione.md. Usa quando l'utente porta nuovo materiale da elaborare, dice "processa questo", "ingest", "elabora", "/personal-brain-ingest".
 license: MIT
 metadata:
-  author: USERNAME
+  author: manuel-magnani2
   version: "1.0"
 ---
 
