@@ -45,7 +45,7 @@ Fix automatico proposto (con conferma): aggiorna `index.md`.
 
 ### Check 3 — Wikilink rotti
 
-Scansiona tutti i file `.md` in `Wiki/`. Per ogni `[[wikilink]]`, verifica che il file esista in `Wiki/`. Raggruppa i link rotti per file sorgente.
+Scansiona tutti i file `.md` in `Wiki/fonti/`, `Wiki/concetti/`, `Wiki/sintesi/` e i file speciali (`index.md`, `evoluzione.md`). Escludi `Wiki/sessioni/` — è un log di processo, non conoscenza curata, e non è soggetto a questo check. Per ogni `[[wikilink]]`, verifica che il file esista in `Wiki/`. Raggruppa i link rotti per file sorgente.
 
 Fix: non automatico — l'utente decide se creare la pagina, aggiornare il link, o rimuoverlo.
 
@@ -109,6 +109,10 @@ Fix: non automatico — richiede riflessione dell'utente.
 
 Procedo con le correzioni automatiche per vault-map e index.md?
 ```
+
+## Log di sessione
+
+Al termine del lint (dopo il report, indipendentemente dal fatto che siano stati applicati fix), scrivi una voce in `Wiki/sessioni/YYYY-MM-DD.md` (crea il file se non esiste per oggi). Formato in `references/wiki-schema.md` della skill `personal-brain-setup`, sezione `Wiki/sessioni/`. Automatico, non richiede conferma.
 
 ## Regole
 

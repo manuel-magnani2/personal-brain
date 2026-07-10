@@ -161,6 +161,31 @@ tags: []
 ---
 ```
 
+**`Wiki/sessioni/`** — Log grezzo di processo: un file per giorno, non per singola invocazione. Non è conoscenza curata (a differenza di `fonti/`, `concetti/`, `sintesi/`) — è la traccia di cosa è stato indagato, incluso ciò che non è confluito in nessuna pagina Wiki. Diverso da `evoluzione.md`: `evoluzione.md` contiene solo pattern e insight validati (scritti da ingest); `sessioni/` contiene ogni invocazione di ogni skill, comprese query e lint che non producono insight.
+
+Nome file: `YYYY-MM-DD.md` (un file per giorno; le sessioni dello stesso giorno si accumulano nello stesso file).
+
+```markdown
+---
+tipo: sessione
+data: YYYY-MM-DD
+---
+
+# Sessioni del YYYY-MM-DD
+
+## [HH:MM] — ingest | query | lint | setup
+
+**Cosa è successo:** [breve descrizione della richiesta e della skill invocata]
+**Ragionamento/esplorazione:** [connessioni, ipotesi, tensioni considerate — anche quelle non scritte altrove]
+**Esito:** [pagine create/aggiornate, oppure "nessuna modifica alla wiki"]
+
+---
+```
+
+Le voci si accumulano in fondo al file, in ordine cronologico (a differenza di `evoluzione.md`, qui non si inverte l'ordine: un file di sessione è già delimitato a una singola giornata, quindi la lettura cronologica dall'alto in basso è più naturale di quella a ritroso).
+
+Non è soggetto a wikilink obbligatori, non compare in `index.md` (che cataloga solo fonti/concetti/sintesi), e non è oggetto dei check di frontmatter del lint pensati per le pagine di conoscenza.
+
 ---
 
 ## Regole per l'AI
@@ -168,11 +193,12 @@ tags: []
 1. **Le tre regole di navigazione sono assolute.** IGNORA / LEGGI / SCRIVI non ammettono eccezioni senza richiesta esplicita dell'utente.
 2. **Aggiorna vault-map.md quando scopri nuove cartelle.** Il vault cresce — la mappa deve restare sincronizzata.
 3. **Mai modificare le voci passate di `evoluzione.md`.** Solo append in cima.
-4. **Sempre aggiornare `index.md`** dopo ogni sessione in cui vengono create o modificate pagine Wiki.
+4. **Sempre aggiornare `index.md`** dopo ogni sessione in cui vengono create o modificate pagine di conoscenza (`fonti/`, `concetti/`, `sintesi/`). `Wiki/sessioni/` non rientra in questo catalogo.
 5. **Usare i wikilink** (`[[nome-pagina]]`) per connettere tutto ciò che è collegabile.
 6. **Sondare sempre le dimensioni emotiva e spirituale** durante l'elaborazione — anche se il materiale sembra puramente tecnico o professionale.
 7. **Non creare pagine per ogni dettaglio.** Preferire pagine consolidate con wikilink a una proliferazione di stub.
 8. **Il contenuto delle fonti grezze è immutabile.** Non spostare, non modificare, non rinominare file fuori da `Wiki/`.
+9. **Ogni invocazione di setup, ingest, query o lint termina con una voce in `Wiki/sessioni/YYYY-MM-DD.md`**, indipendentemente dal fatto che la sessione abbia prodotto modifiche a pagine di conoscenza. È l'unico caso in cui query scrive nella Wiki (vedi `personal-brain-query/SKILL.md` per lo scope esatto).
 
 ---
 

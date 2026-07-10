@@ -69,6 +69,8 @@ In sintesi:
 
 ### Fase 4 — Aggiorna i file speciali
 
+**Controllo baseline (solo se è il primo ingest mai eseguito)** — se `Wiki/evoluzione.md` contiene solo il placeholder iniziale, valuta se scrivere una voce baseline prima di quella della fonte. Vedi la sezione dedicata in `references/ingest-protocol.md` — non scriverla se non c'è stato genuino da osservare.
+
 **`Wiki/evoluzione.md`** — aggiungi una voce in CIMA:
 ```markdown
 ## YYYY-MM-DD — [titolo breve]
@@ -84,7 +86,11 @@ In sintesi:
 
 **`Wiki/index.md`** — aggiorna le sezioni Fonti, Concetti, Sintesi con le nuove pagine create.
 
-### Fase 5 — Chiusura
+### Fase 5 — Log di sessione
+
+Scrivi una voce in `Wiki/sessioni/YYYY-MM-DD.md` (crea il file se non esiste per oggi). Formato in `references/wiki-schema.md` della skill `personal-brain-setup`, sezione `Wiki/sessioni/`. Questo passo è automatico e non richiede conferma — è un'operazione di log, non una modifica di contenuto.
+
+### Fase 6 — Chiusura
 
 Riepiloga cosa è stato creato/aggiornato. Proponi una domanda aperta per la prossima sessione.
 
@@ -95,3 +101,4 @@ Riepiloga cosa è stato creato/aggiornato. Proponi una domanda aperta per la pro
 - Sempre aggiornare `evoluzione.md` e `index.md` a fine ingest
 - Usare i wikilink per collegare tutto ciò che è collegabile
 - Se non emergono concetti nuovi, non creare pagine vuote
+- Non forzare una voce baseline sintetica in `evoluzione.md` — solo se c'è stato genuino da riportare

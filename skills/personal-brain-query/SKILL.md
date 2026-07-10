@@ -60,7 +60,11 @@ Poi leggi le pagine rilevanti identificate in index.md.
 - **Distingui** tra ciò che è nella wiki e ciò che aggiungi come ragionamento
 - **Non inventare** connessioni che non esistono nella wiki — se una connessione non c'è ma potrebbe esserci, dillo esplicitamente come proposta
 - **Suggerisci un ingest** se la domanda riguarda un tema non ancora nella wiki
-- **Non aggiornare la wiki** durante una query — la query è in sola lettura. Se emerge qualcosa di importante, proponi di fare un ingest dedicato
+- **Non aggiornare la wiki** durante una query, con una sola eccezione esplicita: il log di sessione (vedi sotto). Query resta sola lettura su tutto il resto — `fonti/`, `concetti/`, `sintesi/`, `index.md`, `evoluzione.md`, `vault-map.md` non vanno mai toccati. Se emerge qualcosa di importante per la conoscenza curata, proponi di fare un ingest dedicato — non scriverlo tu
+
+## Chiusura — log di sessione
+
+Al termine di ogni query, scrivi una voce in `Wiki/sessioni/YYYY-MM-DD.md` (crea il file se non esiste per oggi). È l'unica scrittura che questa skill fa nella Wiki — non richiede conferma, è un log di processo, non conoscenza curata. Formato in `references/wiki-schema.md` della skill `personal-brain-setup`, sezione `Wiki/sessioni/`.
 
 ## Se la wiki è vuota o insufficiente
 

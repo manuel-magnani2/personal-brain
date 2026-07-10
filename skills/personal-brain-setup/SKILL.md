@@ -41,6 +41,7 @@ Wiki/
   fonti/
   concetti/
   sintesi/
+  sessioni/
 ```
 
 Crea `Wiki/index.md`:
@@ -119,6 +120,10 @@ Crea `AGENTS.md` alla root del vault con il contenuto del template. Se `AGENTS.m
 Elenca cosa è stato creato e cosa già esisteva. Mostra il passo successivo:
 
 > "Il vault è configurato. Porta del materiale in una delle cartelle raw e usa `/personal-brain-ingest` per iniziare."
+
+### Passo 6 — Log di sessione
+
+Scrivi una voce in `Wiki/sessioni/YYYY-MM-DD.md` (crea il file — è il primo). Formato in `references/wiki-schema.md`, sezione `Wiki/sessioni/`. Automatico, non richiede conferma.
 
 ---
 

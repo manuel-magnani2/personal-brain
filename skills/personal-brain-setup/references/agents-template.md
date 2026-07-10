@@ -94,11 +94,23 @@ Specifica completa del formato Wiki: `.agents/skills/personal-brain-setup/refere
 
 ---
 
+## Log di sessione
+
+Al termine di ogni invocazione di `/personal-brain-setup`, `/personal-brain-ingest`, `/personal-brain-query` o `/personal-brain-lint`, scrivi automaticamente una voce in `Wiki/sessioni/YYYY-MM-DD.md` — indipendentemente dal fatto che la sessione abbia prodotto modifiche a pagine di conoscenza (`fonti/`, `concetti/`, `sintesi/`). Non serve che l'utente lo richieda: è un passo automatico di chiusura, come l'aggiornamento di `index.md` per ingest.
+
+Questa è l'unica scrittura che `/personal-brain-query` può fare nella Wiki: query resta sola lettura su tutto il resto (vedi `personal-brain-query/SKILL.md`).
+
+Formato e convenzioni: `.agents/skills/personal-brain-setup/references/wiki-schema.md`, sezione `Wiki/sessioni/`.
+
+---
+
 ## Versionamento
 
 Il vault è sotto controllo Git (archivio separato — vedi Note tecniche).
 
-Al termine di ogni sessione che scrive nella Wiki (setup, ingest, lint con fix applicati), esegui un commit automaticamente, senza chiedere conferma. Il commit Git è un'operazione locale e reversibile, distinta dalle modifiche di contenuto — quelle restano soggette alle regole di conferma di ciascuna skill.
+Al termine di ogni sessione che scrive in **conoscenza curata** (`Wiki/fonti/`, `Wiki/concetti/`, `Wiki/sintesi/`, `Wiki/index.md`, `Wiki/evoluzione.md`, `Wiki/vault-map.md` — quindi setup, ingest, lint con fix applicati), esegui un commit automaticamente, senza chiedere conferma. Il commit Git è un'operazione locale e reversibile, distinta dalle modifiche di contenuto — quelle restano soggette alle regole di conferma di ciascuna skill.
+
+Le scritture in `Wiki/sessioni/` (incluse quelle di sola query) **non** attivano da sole un commit — si accumulano nel working tree e vengono incluse nel commit successivo generato da un ingest, un lint con fix, o un setup. Questo evita un commit ad ogni query, mantenendo pochi commit significativi.
 
 Messaggio di commit: sintetico, in italiano, descrive cosa è stato fatto. Esempi:
 - `ingest: [titolo fonte]`

@@ -157,6 +157,25 @@ tags: []
 
 ---
 
+## Voce baseline in evoluzione.md (solo al primo ingest)
+
+### Quando si applica
+Prima di scrivere la voce specifica della fonte (fase 4 della skill), controlla `Wiki/evoluzione.md`: se contiene solo il placeholder iniziale (*"nessuna voce ancora"*), questo è il primo ingest mai eseguito su questo vault.
+
+### Cosa scrivere
+Una voce baseline che precede quella della fonte, con lo stesso formato standard di `evoluzione.md` (vedi `wiki-schema.md`), ma con contenuto diverso: non descrive la fonte appena processata, descrive lo **stato osservato del vault prima di questo ingest** — cosa emerge da `Profile/me.md` se esiste, quali cartelle raw sono già popolate, eventuali note che l'utente ha già scritto autonomamente nel vault prima di usare queste skill.
+
+### Regola assoluta: niente placeholder sintetico
+Se non c'è nulla di genuino da osservare — `Profile/me.md` non esiste o è vuoto, le cartelle raw sono vuote, non c'è alcuno stato pregresso — **non scrivere la baseline**. Una voce tipo *"sistema inizializzato, nessun dato pregresso"* non è una baseline, è un placeholder di processo, ed è esattamente ciò che la regola "niente entry sintetiche" vieta. In questo caso la prima voce reale di `evoluzione.md` è semplicemente quella della prima fonte ingerita — niente viene forzato prima.
+
+### Esempio di quando ha senso
+L'utente ha già scritto mesi di appunti in `Mindset/note-sparse.md` prima di configurare il Personal Brain. Il primo ingest legge quel materiale (o `Profile/me.md`, se contiene un autoritratto) e trova pattern reali già esistenti — quello è contenuto genuino, degno di una voce baseline.
+
+### Esempio di quando NON ha senso
+Vault appena creato con `/personal-brain-setup`, cartelle raw vuote, `Profile/me.md` assente. Non c'è nulla da osservare: si salta la baseline.
+
+---
+
 ## Regole di naming per i wikilink
 
 - Usa sempre il nome file esatto, senza estensione: `[[nome-file]]`
